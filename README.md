@@ -3,22 +3,22 @@
 Site vitrine responsive en HTML, CSS et JavaScript natifs. Aucun outil de compilation n'est nécessaire.
 
 ## Fichiers
-- `index.html` : contenu et structure du site
-- `styles.css` : identité visuelle, responsive design et animations
-- `script.js` : navigation mobile, animations et préparation de la demande de contact
+- `index.html` : contenu, navigation, services, partenaires et formulaire de demande
+- `styles.css` : identité visuelle, mise en page responsive et animations
+- `script.js` : navigation mobile, animations et préparation des demandes WhatsApp / e-mail
+- `assets/delivtout-fleet-banner.webp` : visuel de flotte validé
 
-## Prévisualisation
-Ouvrir `index.html` dans un navigateur ou activer GitHub Pages dans les paramètres du dépôt.
+## Fonctionnement du formulaire
+Le formulaire prépare un message et propose de l'envoyer par WhatsApp ou par e-mail. Il n'enregistre pas les demandes sur un serveur et ne les envoie pas automatiquement : l'utilisateur doit confirmer l'envoi dans son application.
 
-## Avant la mise en ligne publique — indispensable
-1. Ajouter les coordonnées officielles de Deliv'tout (téléphone, e-mail, adresse du siège).
-2. Connecter le formulaire à une adresse ou à un service de réception réel. Actuellement, il prépare et copie le message ; il ne transmet aucune demande automatiquement.
-3. Ajouter les mentions légales, les informations d'immatriculation et la politique de confidentialité adaptées à l'entreprise.
-4. Vérifier précisément les prestations, zones desservies, capacités et conditions proposées.
-5. Ajouter des photos authentiques de l'entreprise, de ses véhicules et de ses équipes, avec les droits nécessaires.
-6. Tester le site sur mobile et ordinateur avant toute diffusion.
+## Avant publication
+1. Confirmer les mentions légales, notamment le directeur de publication et l'hébergeur réellement utilisé.
+2. Vérifier les informations de société et l'adresse figurant dans les mentions légales.
+3. Tester les liens de contact et le formulaire sur téléphone et ordinateur.
+4. Vérifier que les logos et noms de partenaires sont utilisés avec l'autorisation nécessaire.
+5. Vérifier les prestations et zones d'intervention effectivement proposées.
 
-Aucun avis client, tarif, certification, assurance, délai garanti ou référence commerciale n'est inventé dans cette version.
+Aucun avis client, tarif, certification, assurance, délai garanti ou statistique n'est inventé.
 
-## Publication
-Dans GitHub : Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save. La disponibilité de GitHub Pages dépend des paramètres et de l'offre du compte pour un dépôt privé. Vérifier le statut affiché par GitHub avant de communiquer une adresse publique.
+## Publication avec GitHub Pages
+Dans le dépôt GitHub : **Settings → Pages → Deploy from a branch → main → / (root) → Save**. Attendre que GitHub confirme la publication avant de diffuser l'adresse du site.
