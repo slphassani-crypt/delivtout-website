@@ -1,5 +1,58 @@
-const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('.main-nav');if(menuButton&&nav){menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));}
-document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{const select=document.querySelector('#service');if(select){select.value=link.dataset.service;}}));
-const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear();
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const form=document.querySelector('#quote-form');const result=document.querySelector('#form-result');if(form&&result){form.addEventListener('submit',event=>{event.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const lines=['Bonjour Deliv\'tout,','', 'Je souhaite être recontacté(e) au sujet de ma demande :','Service : '+data.get('service'),'Nom : '+data.get('name'),'E-mail : '+data.get('email'),'Téléphone : '+(data.get('phone')||'Non renseigné'),'Ville / secteur : '+(data.get('city')||'Non renseigné'),'Détails : '+(data.get('details')||'À préciser'),'','Merci.'];const message=lines.join('\n');const wa='https://wa.me/33681477291?text='+encodeURIComponent(message);result.innerHTML='Votre demande est prête. <a href="'+wa+'" target="_blank" rel="noopener">Envoyer votre demande sur WhatsApp ↗</a> ou écrivez-nous à <a href="mailto:hl.delivtout@gmail.com?subject='+encodeURIComponent('Demande de devis Deliv’tout')+'&body='+encodeURIComponent(message)+'">par e-mail ↗</a>.';});}
+const menuButton=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.main-nav');
+if(menuButton&&nav){
+  menuButton.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded',String(open));
+  });
+  nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    menuButton.setAttribute('aria-expanded','false');
+  }));
+}
+document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{
+  const select=document.querySelector('#service');
+  if(select) select.value=link.dataset.service;
+}));
+const year=document.querySelector('#year');
+if(year) year.textContent=new Date().getFullYear();
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+}else{
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+}
+const form=document.querySelector('#quote-form');
+const result=document.querySelector('#form-result');
+if(form&&result){
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!form.reportValidity()) return;
+    const data=new FormData(form);
+    const lines=[
+      "Bonjour Deliv'tout,","",
+      "Je souhaite être recontacté(e) au sujet de ma demande :",
+      "Service : "+(data.get('service')||'Non précisé'),
+      "Nom : "+(data.get('name')||'Non renseigné'),
+      "E-mail : "+(data.get('email')||'Non renseigné'),
+      "Téléphone : "+(data.get('phone')||'Non renseigné'),
+      "Ville / secteur : "+(data.get('city')||'Non renseigné'),
+      "Détails : "+(data.get('details')||'À préciser'),"",
+      "Merci."
+    ];
+    const message=lines.join('\n');
+    const wa='https://wa.me/33681477291?text='+encodeURIComponent(message);
+    const mail='mailto:hl.delivtout@gmail.com?subject='+encodeURIComponent("Demande de contact Deliv'tout")+'&body='+encodeURIComponent(message);
+    result.replaceChildren();
+    const intro=document.createElement('p');
+    intro.textContent='Votre demande est prête. Choisissez comment l’envoyer :';
+    const waLink=document.createElement('a');
+    waLink.href=wa;waLink.target='_blank';waLink.rel='noopener noreferrer';waLink.textContent='Envoyer sur WhatsApp ↗';
+    const sep=document.createTextNode(' ou ');
+    const mailLink=document.createElement('a');
+    mailLink.href=mail;mailLink.textContent='envoyer par e-mail ↗';
+    result.append(intro,waLink,sep,mailLink);
+  });
+}
