@@ -12,3 +12,10 @@
 .fleet-card{padding:0;border:0;background:transparent}.fleet-visual{height:190px;background:linear-gradient(145deg,#eef3ec,#dce8d9);border:1px solid #dce5d9;border-radius:3px}.fleet-visual:after{color:rgba(31,93,54,.06)}
 .partners{background:#f0f4ee;padding-inline:32px}.partner-names span{border-radius:2px;color:#243b2b}.pro-band{background:#173d2a}.quote-section{background:#102d20}.form-submit{background:#397b42}
 @media(max-width:650px){.partners{padding-inline:20px}}
+
+
+/* Approved fleet banner: keep the real image crisp and uncropped */
+.hero-art.fleet-image{height:auto;min-height:0;align-self:center;overflow:hidden;border-radius:4px;background:transparent}
+.hero-art.fleet-image:before{content:none}
+.hero-art.fleet-image img{position:relative;z-index:1;display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:650px){.hero-art.fleet-image{height:auto;margin-bottom:56px}.hero-art.fleet-image img{width:100%;height:auto}}
