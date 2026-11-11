@@ -578,3 +578,54 @@ body{background:#050806;color:var(--white)}
 @media(prefers-reduced-motion:reduce){
   .hero-cinematic{background-attachment:scroll}
 }
+
+
+/* --- Refined visual pass: real photographic service panels and balanced mobile layout --- */
+.service-image{background-size:cover;background-position:center;isolation:isolate}
+.service-image:before{z-index:1;background:linear-gradient(180deg,rgba(4,9,6,.02) 5%,rgba(4,9,6,.18) 42%,rgba(4,9,6,.82) 100%)}
+.service-image:after{display:none}
+.service-symbol{z-index:2;top:auto;left:20px;bottom:42px;font-size:34px;text-shadow:0 2px 14px #000}
+.service-photo-label{z-index:2;left:20px;top:15px;bottom:auto;padding:6px 9px;border:1px solid #ffffff55;border-radius:20px;background:#06100999;font-size:8px;letter-spacing:.16em}
+.service-transport{background-image:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1000&q=85')}
+.service-delivery{background-image:url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1000&q=85')}
+.service-logistics{background-image:url('https://images.unsplash.com/photo-149 laptop?auto=format&fit=crop&w=1000&q=85')}
+.service-dedicated{background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=85')}
+.service-card{border-radius:18px}
+.service-image{height:190px}
+.service-info{padding:20px 21px 22px}
+.service-info h3{font-size:18px}
+.service-info p{font-size:12px;min-height:58px}
+.partner-strip{margin-left:auto;margin-right:auto;left:auto;right:auto}
+@media(max-width:800px){
+ .hero-cinematic{height:min(760px,calc(100svh - 72px));min-height:660px}
+ .hero-background{object-position:62% center}
+ .hero-content{padding-top:82px}
+ .hero-content h1{max-width:540px;font-size:clamp(39px,8.2vw,54px)}
+ .hero-content>p{max-width:390px}
+ .hero-promises{gap:11px;font-size:9px;flex-wrap:wrap}
+ .partner-strip{width:calc(100% - 32px);margin:18px auto 0;display:flex;justify-content:center;padding:0 10px;overflow:hidden}
+ .partner-title{width:145px;justify-content:center;flex:0 0 145px}
+ .partner-marquee{flex:1;min-width:0}
+ .partner-group span{min-width:118px;padding-inline:9px}
+ .services-section{padding-top:68px}
+ .service-grid{grid-template-columns:1fr 1fr;gap:12px}
+ .service-image{height:155px}
+ .service-info{padding:15px}
+ .service-info h3{font-size:15px}
+ .service-info p{font-size:10px;min-height:66px}
+ .whatsapp-float{right:16px;bottom:22px;z-index:90}
+}
+@media(max-width:430px){
+ .partner-strip{width:calc(100% - 24px);height:64px}
+ .partner-title{width:126px;flex-basis:126px}
+ .partner-title b{font-size:11px}
+ .partner-handshake{font-size:14px}
+ .partner-group span{min-width:105px;font-size:9px}
+ .service-grid{gap:10px}
+ .service-image{height:132px}
+ .service-symbol{left:14px;bottom:34px;font-size:28px}
+ .service-photo-label{left:13px;top:11px;font-size:7px}
+ .service-info{padding:13px}
+ .service-info h3{font-size:14px}
+ .service-info p{font-size:9px;line-height:1.55}
+}
