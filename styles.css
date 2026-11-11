@@ -902,3 +902,35 @@ body{margin:0;background:var(--bg);color:var(--white);font-family:'DM Sans',sans
 @media(prefers-reduced-motion:reduce){
  .hero-cinematic{background-attachment:scroll}
 }
+
+
+/* Mobile hero image visibility: crop away any embedded empty margins and give the fleet photo real space */
+@media(max-width:700px){
+  .hero-background{
+    display:block!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:clamp(300px,78vw,470px)!important;
+    max-height:none!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    object-position:center 52%!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+  .hero-cinematic{
+    display:flex!important;
+    flex-direction:column!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:0!important;
+    overflow:hidden!important;
+    background:#050806!important;
+    background-image:none!important;
+  }
+  .hero-shade{display:none!important}
+  .hero-content{padding:28px 0 34px!important}
+}
