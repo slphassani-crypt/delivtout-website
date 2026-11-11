@@ -275,3 +275,20 @@ button{cursor:pointer}
  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
  .reveal{opacity:1;transform:none;filter:none}
 }
+
+/* Subtle continuous cinematic movement on the hero image */
+.hero-background{
+  animation:hero-arrive 1.15s ease both,hero-kenburns 28s ease-in-out 1.15s infinite alternate;
+  transform-origin:58% 48%;
+}
+@keyframes hero-kenburns{
+  0%{transform:scale(1) translate3d(0,0,0)}
+  100%{transform:scale(1.075) translate3d(-.65%,.25%,0)}
+}
+@media(max-width:560px){
+  .hero-background{transform-origin:63% 50%;animation:hero-arrive 1.15s ease both,hero-kenburns 30s ease-in-out 1.15s infinite alternate}
+  @keyframes hero-kenburns{
+    0%{transform:scale(1) translate3d(0,0,0)}
+    100%{transform:scale(1.10) translate3d(-.5%,.3%,0)}
+  }
+}
