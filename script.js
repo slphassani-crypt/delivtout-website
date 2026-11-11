@@ -57,19 +57,11 @@ if(form&&result){
   });
 }
 const progressBar=document.querySelector('#scroll-progress-bar');
-const heroVisual=document.querySelector('.hero-art');
 let scrollTick=false;
 function updateScrollEffects(){
   const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
   const progress=maxScroll>0?(window.scrollY/maxScroll)*100:0;
   if(progressBar) progressBar.style.width=progress+'%';
-  if(heroVisual && window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
-    const rect=heroVisual.getBoundingClientRect();
-    if(rect.bottom>0 && rect.top<window.innerHeight){
-      const offset=Math.max(-16,Math.min(16,(window.innerHeight/2-(rect.top+rect.height/2))*.035));
-      heroVisual.style.transform='translate3d(0,'+offset+'px,0)';
-    }
-  }
   scrollTick=false;
 }
 window.addEventListener('scroll',()=>{
