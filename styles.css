@@ -1,6 +1,6 @@
 :root{
   --bg:#050806;--panel:#0b120d;--panel-2:#101a13;--line:#263329;--muted:#a4aea5;
-  --white:#f7faf6;--lime:#b8ff00;--green:#75c900;--font:'DM Sans',sans-serif;--display:'Manrope',sans-serif;
+  --white:#f7faf6;--lime:#78b947;--green:#5f9f35;--font:'DM Sans',sans-serif;--display:'Manrope',sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -291,4 +291,55 @@ button{cursor:pointer}
     0%{transform:scale(1) translate3d(0,0,0)}
     100%{transform:scale(1.10) translate3d(-.5%,.3%,0)}
   }
+}
+
+
+/* Deliv'tout leaf-green identity + complete fleet image framing */
+:root{
+  --lime:#78b947;
+  --green:#5f9f35;
+}
+.scroll-progress span{background:linear-gradient(90deg,#4d8e35,#8bc65b);box-shadow:0 0 12px #78b94780}
+.chip-dot,.section-eyebrow span{background:#78b947;box-shadow:0 0 10px #78b947}
+.nav-cta,.button-lime{background:#78b947;box-shadow:0 0 18px #78b94740}
+.nav-cta:hover,.button-lime:hover{box-shadow:0 0 24px #78b94766}
+.main-nav>a.active:after{background:#78b947;box-shadow:0 0 8px #78b94780}
+.hero-chip{border-color:#78b94790;color:#a8d887}
+.hero-content h1 em,.services-section h2 em,.fleet-copy h2 em,.pro-band h2 em,.about-copy h2 em,.quote-intro h2 em,.recruit-section h2 em{color:#8bc65b}
+.hero-background{
+  object-fit:contain;
+  object-position:center center;
+  background:#07100a;
+  animation:hero-arrive 1.15s ease both;
+  transform:none;
+}
+.hero-cinematic{
+  height:clamp(520px,58vw,760px);
+  min-height:520px;
+  background:#07100a;
+}
+.hero-shade{
+  background:linear-gradient(90deg,rgba(3,8,5,.94) 0%,rgba(3,8,5,.78) 27%,rgba(3,8,5,.32) 52%,rgba(3,8,5,.02) 78%),linear-gradient(0deg,rgba(3,8,5,.65),transparent 30%,rgba(3,8,5,.08));
+}
+.partner-strip{border-color:#365039;box-shadow:0 10px 30px #0008,0 3px 20px #78b94716}
+.service-card:hover{border-color:#78b947;box-shadow:0 18px 40px #0008,0 0 20px #78b94720}
+.service-symbol,.service-info a,.about-values b,.quote-contact a{color:#8bc65b}
+.service-info a span{border-color:#78b947}
+.service-info a:hover span{background:#78b947}
+@media(max-width:800px){
+  .hero-cinematic{height:auto;min-height:0;aspect-ratio:1.12/1}
+  .hero-background{object-fit:contain;object-position:center top}
+  .hero-shade{background:linear-gradient(90deg,rgba(3,8,5,.92),rgba(3,8,5,.55) 68%,rgba(3,8,5,.16)),linear-gradient(0deg,rgba(3,8,5,.68),transparent 50%)}
+  .hero-content{padding-top:clamp(48px,12vw,95px)}
+  .hero-content h1{font-size:clamp(34px,7vw,52px)}
+  .hero-scroll{bottom:14px}
+}
+@media(max-width:560px){
+  .hero-cinematic{aspect-ratio:1/1.05;min-height:440px}
+  .hero-background{object-fit:contain;object-position:center 0}
+  .hero-content{padding-top:54px}
+  .hero-content h1{font-size:36px}
+  .hero-content>p{max-width:280px}
+  .hero-promises{display:none}
+  .hero-scroll{display:none}
 }
