@@ -904,33 +904,63 @@ body{margin:0;background:var(--bg);color:var(--white);font-family:'DM Sans',sans
 }
 
 
-/* Mobile hero image visibility: crop away any embedded empty margins and give the fleet photo real space */
-@media(max-width:700px){
-  .hero-background{
-    display:block!important;
-    position:relative!important;
-    inset:auto!important;
-    width:100%!important;
-    height:clamp(300px,78vw,470px)!important;
-    max-height:none!important;
-    aspect-ratio:auto!important;
-    object-fit:cover!important;
-    object-position:center 52%!important;
-    opacity:1!important;
-    visibility:visible!important;
-    transform:none!important;
-  }
-  .hero-cinematic{
-    display:flex!important;
-    flex-direction:column!important;
-    height:auto!important;
-    min-height:0!important;
-    max-height:none!important;
-    padding:0!important;
-    overflow:hidden!important;
-    background:#050806!important;
-    background-image:none!important;
-  }
-  .hero-shade{display:none!important}
-  .hero-content{padding:28px 0 34px!important}
+/* Mobile refinement: preserve the desktop hero composition and hierarchy */
+@media(max-width:800px){
+ .hero-cinematic{height:min(760px,calc(100svh - 72px));min-height:650px}
+ .hero-background{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:58% center!important;opacity:1!important;visibility:visible!important}
+ .hero-shade{display:block!important;background:linear-gradient(90deg,rgba(3,8,5,.92),rgba(3,8,5,.68) 52%,rgba(3,8,5,.18)),linear-gradient(0deg,rgba(3,8,5,.8),transparent 52%)!important}
+ .hero-content{padding-top:clamp(70px,11vh,110px)!important}
+}
+@media(max-width:560px){
+ .site-header{height:68px;padding-inline:20px}
+ .main-nav{top:67px}
+ .hero-cinematic{height:min(790px,calc(100svh - 68px));min-height:690px}
+ .hero-background{object-position:61% center!important;animation:none!important}
+ .hero-content{width:calc(100% - 40px);padding-top:clamp(65px,10vh,92px)!important;padding-bottom:90px}
+ .hero-content h1{max-width:530px;font-size:clamp(39px,9.4vw,49px);line-height:1.01}
+ .hero-content>p{max-width:360px;font-size:13px;line-height:1.65}
+ .hero-actions{align-items:stretch;gap:10px}
+ .hero-promises{max-width:330px;gap:10px}
+ .hero-scroll{bottom:19px}
+ .partner-strip{width:calc(100% - 36px);height:68px;margin:-1px auto 0;padding:0 10px 0 0;gap:8px;border-radius:24px}
+ .partner-title{width:132px;justify-content:center}
+ .partner-title b{font-size:12px}
+ .partner-marquee{flex:1}
+ .partner-group span{min-width:116px}
+ .services-section{padding-top:70px;padding-bottom:78px}
+ .services-section h2{max-width:440px;margin-inline:auto;font-size:clamp(29px,7vw,34px)}
+ .section-intro{max-width:430px;font-size:12px;line-height:1.7}
+ .service-grid{grid-template-columns:1fr;gap:16px}
+ .service-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:184px;border-radius:15px}
+ .service-image{height:100%;min-height:184px}
+ .service-info{padding:18px 16px;justify-content:center}
+ .service-info h3{font-size:16px;line-height:1.2}
+ .service-info p{font-size:11px;line-height:1.6}
+ .service-info a{font-size:10px}
+ .fleet-section,.pro-band{padding-block:76px}
+ .fleet-inner{gap:28px}
+ .fleet-facts{padding:8px 20px}
+ .about-section{padding-block:78px}
+ .quote-section{padding-block:76px}
+ .quote-form{padding:24px 20px}
+ .form-row{grid-template-columns:1fr 1fr;gap:12px}
+ .footer-main{grid-template-columns:1fr 1fr}
+ .footer-main>p{grid-column:1/-1;grid-row:2}
+ .footer-contact{grid-column:2;grid-row:1}
+ .footer-bottom{flex-direction:row;flex-wrap:wrap;align-items:center}
+ .whatsapp-float{right:16px;bottom:18px}
+}
+@media(max-width:390px){
+ .hero-content{width:calc(100% - 34px)}
+ .hero-content h1{font-size:37px}
+ .hero-chip{font-size:8px}
+ .hero-actions .button{padding-inline:12px;font-size:9px}
+ .partner-strip{width:calc(100% - 22px)}
+ .partner-title{width:112px}
+ .partner-title b{font-size:10px}
+ .service-card{grid-template-columns:38% 62%}
+ .service-info{padding:14px 12px}
+ .service-info h3{font-size:14px}
+ .form-row,.footer-main{grid-template-columns:1fr}
+ .footer-main>p,.footer-contact{grid-column:1;grid-row:auto}
 }
