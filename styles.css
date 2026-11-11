@@ -964,3 +964,123 @@ body{margin:0;background:var(--bg);color:var(--white);font-family:'DM Sans',sans
  .form-row,.footer-main{grid-template-columns:1fr}
  .footer-main>p,.footer-contact{grid-column:1;grid-row:auto}
 }
+
+
+/* ===== Definitive hero layout fix — Nov 2026 ===== */
+/* One consistent composition: the fleet photo fills the hero, while the copy
+   sits over it. This overrides the earlier conflicting mobile hero rules. */
+.hero-cinematic{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  min-height:680px!important;
+  height:min(790px,calc(100svh - 82px))!important;
+  background:#050806!important;
+}
+.hero-background{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-2!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  object-position:center 48%!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  animation:none!important;
+}
+.hero-shade{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(90deg,rgba(3,8,5,.88) 0%,rgba(3,8,5,.68) 38%,rgba(3,8,5,.20) 78%,rgba(3,8,5,.10) 100%),
+    linear-gradient(0deg,rgba(3,8,5,.76) 0%,transparent 54%,rgba(3,8,5,.10) 100%)!important;
+}
+.hero-content{
+  position:relative!important;
+  z-index:2!important;
+  width:min(1240px,calc(100% - 72px))!important;
+  margin-inline:auto!important;
+  padding-top:clamp(105px,15vh,165px)!important;
+  padding-bottom:120px!important;
+}
+.hero-content h1{max-width:760px!important}
+.partner-strip{
+  position:relative!important;
+  left:auto!important;right:auto!important;transform:none!important;
+  width:min(1260px,calc(100% - 64px))!important;
+  margin:20px auto 0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.partner-title{flex:0 0 178px!important}
+.partner-marquee{flex:1 1 auto!important;min-width:0!important}
+
+@media(max-width:800px){
+  .hero-cinematic{
+    height:min(820px,calc(100svh - 68px))!important;
+    min-height:700px!important;
+  }
+  .hero-background{
+    position:absolute!important;inset:0!important;
+    width:100%!important;height:100%!important;
+    object-fit:cover!important;
+    object-position:58% center!important;
+  }
+  .hero-shade{
+    background:
+      linear-gradient(90deg,rgba(3,8,5,.84) 0%,rgba(3,8,5,.64) 48%,rgba(3,8,5,.22) 100%),
+      linear-gradient(0deg,rgba(3,8,5,.82) 0%,rgba(3,8,5,.08) 62%,rgba(3,8,5,.24) 100%)!important;
+  }
+  .hero-content{
+    width:calc(100% - 40px)!important;
+    margin-inline:auto!important;
+    padding-top:clamp(78px,12vh,112px)!important;
+    padding-bottom:100px!important;
+  }
+  .hero-content h1{
+    max-width:560px!important;
+    font-size:clamp(38px,8.6vw,54px)!important;
+    line-height:1.02!important;
+  }
+  .hero-content>p{max-width:390px!important;font-size:14px!important}
+  .hero-scroll{display:flex!important;bottom:20px!important}
+  .partner-strip{
+    width:calc(100% - 36px)!important;
+    min-height:72px!important;height:72px!important;
+    margin:18px auto 0!important;
+    padding:0 12px!important;
+    display:flex!important;flex-direction:row!important;
+    align-items:center!important;gap:8px!important;
+    border-radius:20px!important;
+  }
+  .partner-title{width:126px!important;flex:0 0 126px!important}
+  .partner-title b{font-size:11px!important}
+  .partner-marquee{flex:1 1 0!important;min-width:0!important}
+  .partner-group{justify-content:flex-start!important}
+  .partner-group span{min-width:112px!important;padding-inline:10px!important}
+  .services-section{width:calc(100% - 40px)!important;padding-top:68px!important}
+  .service-grid{grid-template-columns:1fr!important;gap:16px!important}
+  .service-card{
+    display:grid!important;
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
+    min-height:184px!important;
+  }
+  .service-image{height:100%!important;min-height:184px!important}
+  .service-info{padding:17px 15px!important}
+  .service-info p{min-height:0!important}
+}
+@media(max-width:390px){
+  .hero-content{width:calc(100% - 34px)!important}
+  .hero-content h1{font-size:37px!important}
+  .partner-strip{width:calc(100% - 24px)!important}
+  .partner-title{flex-basis:112px!important;width:112px!important}
+  .partner-group span{min-width:104px!important}
+}
