@@ -26,3 +26,33 @@
 .footer-bottom{flex-wrap:wrap}
 @media(max-width:900px){.footer-main{grid-template-columns:1fr 1fr}.footer-contact{grid-column:1}.footer-cta{grid-column:2;grid-row:2}}
 @media(max-width:650px){.hero-art.fleet-image{border-radius:3px;margin-bottom:56px}.hero-art.fleet-image img{width:100%;height:auto}.footer-main{grid-template-columns:1fr 1fr}.footer-contact{grid-column:1/-1}.footer-cta{grid-column:2;grid-row:1}}
+
+
+/* Deliv'tout premium motion layer */
+.scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:100;background:transparent;pointer-events:none}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#72b544,#c5ed70);box-shadow:0 0 12px #9de64c88}
+.partner-marquee{position:relative;overflow:hidden;width:100%;margin:32px 0 12px;padding:17px 0;background:#0d1a13;border:1px solid #294633;border-radius:5px;box-shadow:0 12px 30px #122a1a16}
+.partner-track{display:flex;width:max-content;animation:partner-flow 28s linear infinite}
+.partner-group{display:flex;align-items:center;flex:none}
+.partner-group span{display:inline-flex;align-items:center;justify-content:center;min-width:185px;padding:0 26px;color:#f4f7f1;font:800 13px var(--display);letter-spacing:.08em;white-space:nowrap;border-right:1px solid #ffffff28}
+.partner-group span:nth-child(3n){color:#b8df86}
+.partner-marquee:hover .partner-track{animation-play-state:paused}
+.partner-marquee:before,.partner-marquee:after{content:"";position:absolute;z-index:2;top:0;bottom:0;width:65px;pointer-events:none}
+.partner-marquee:before{left:0;background:linear-gradient(90deg,#0d1a13,transparent)}
+.partner-marquee:after{right:0;background:linear-gradient(270deg,#0d1a13,transparent)}
+@keyframes partner-flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero-art.fleet-image{position:relative;isolation:isolate}
+.cargo-brand-overlay{position:absolute;z-index:3;left:56.3%;top:61.5%;width:14.5%;height:6.5%;display:flex;align-items:center;justify-content:center;gap:2px;background:#07539a;color:#fff;font:italic 800 clamp(6px,1vw,13px) var(--display);letter-spacing:-.04em;text-shadow:0 1px 2px #001c3a;white-space:nowrap;transform:rotate(-.5deg);pointer-events:none}
+.cargo-brand-overlay b{color:#a8ec32}
+.reveal{transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1),filter .85s ease;filter:blur(3px)}
+.reveal.visible{filter:blur(0)}
+.service-card{will-change:transform}
+.service-card:hover{transform:translateY(-7px) scale(1.008)}
+.partners h2{margin-bottom:14px}
+@media(max-width:650px){
+ .partner-marquee{margin:24px 0 8px;padding:14px 0}
+ .partner-group span{min-width:145px;font-size:11px;padding:0 18px}
+ .partner-marquee:before,.partner-marquee:after{width:28px}
+ .cargo-brand-overlay{font-size:6px;left:56.3%;top:61.5%;width:14.5%;height:6.5%}
+}
+@media(prefers-reduced-motion:reduce){.partner-track{animation:none}.reveal{filter:none}}
