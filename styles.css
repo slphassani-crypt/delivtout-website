@@ -343,3 +343,85 @@ button{cursor:pointer}
   .hero-promises{display:none}
   .hero-scroll{display:none}
 }
+
+
+/* Immersive hero: full-bleed fleet image with a restrained parallax effect */
+.hero-cinematic{
+  height:min(920px,calc(100svh + 170px));
+  min-height:760px;
+  background-image:linear-gradient(90deg,rgba(3,8,5,.78) 0%,rgba(3,8,5,.48) 42%,rgba(3,8,5,.10) 100%),linear-gradient(0deg,rgba(3,8,5,.42),transparent 42%),url("assets/delivtout-hero-fleet.webp");
+  background-size:cover;
+  background-position:center 43%;
+  background-attachment:fixed;
+}
+.hero-background{opacity:0;pointer-events:none}
+.hero-shade{background:linear-gradient(90deg,rgba(3,8,5,.70) 0%,rgba(3,8,5,.43) 40%,rgba(3,8,5,.06) 82%),linear-gradient(0deg,rgba(3,8,5,.45),transparent 42%)}
+.hero-content{padding-top:clamp(110px,16vh,190px)}
+.hero-content h1{max-width:760px;font-size:clamp(48px,6vw,82px)}
+.hero-content>p{max-width:520px;font-size:clamp(15px,1.3vw,18px)}
+@media(max-width:800px){
+ .hero-cinematic{height:auto;min-height:820px;background-attachment:scroll;background-position:58% center}
+ .hero-background{display:none}
+ .hero-content{padding-top:clamp(100px,17vh,150px)}
+}
+@media(max-width:560px){
+ .hero-cinematic{min-height:780px;background-position:58% center}
+ .hero-content{padding-top:105px}
+ .hero-content h1{font-size:clamp(40px,10vw,54px)}
+}
+
+/* Photo-led service cards inspired by the supplied reference */
+.service-image{
+  height:205px;
+  position:relative;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  isolation:isolate;
+}
+.service-image:before{
+  content:"";
+  position:absolute;inset:0;z-index:0;
+  background:linear-gradient(180deg,rgba(2,7,4,.12),rgba(2,7,4,.72));
+  transition:background .35s ease;
+}
+.service-image:after{
+  content:"";
+  position:absolute;inset:0;z-index:0;
+  border:1px solid rgba(255,255,255,.10);
+  pointer-events:none;
+}
+.service-transport{background-image:url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1000&q=85")}
+.service-delivery{background-image:url("https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1000&q=85")}
+.service-logistics{background-image:url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85")}
+.service-dedicated{background-image:url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85")}
+.service-symbol{top:22px;left:22px;font-size:34px}
+.service-photo-label{left:22px;bottom:18px;font-size:9px;text-shadow:0 2px 8px #000}
+.service-card{overflow:hidden;border-radius:14px}
+.service-card:hover .service-image{background-size:cover}
+.service-card:hover .service-image:before{background:linear-gradient(180deg,rgba(2,7,4,.04),rgba(2,7,4,.78))}
+@media(max-width:560px){
+ .service-card{display:block}
+ .service-image{height:190px;min-height:190px}
+ .service-info{padding:18px 18px 20px}
+ .service-info p{min-height:0}
+}
+
+/* Floating WhatsApp contact bubble */
+.whatsapp-float{
+  position:fixed;right:24px;bottom:24px;z-index:110;
+  display:inline-flex;align-items:center;gap:11px;
+  padding:12px 13px 12px 18px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;background:#159b58;color:#fff;
+  box-shadow:0 12px 34px rgba(0,0,0,.42),0 0 22px rgba(21,155,88,.22);
+  font-size:13px;font-weight:800;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.whatsapp-float:hover{transform:translateY(-4px);background:#12884e;box-shadow:0 16px 38px rgba(0,0,0,.5)}
+.whatsapp-float svg{width:23px;height:23px;flex:none}
+.whatsapp-float .wa-hours{padding:6px 9px;border-radius:10px;background:#fff;color:#147b49;font-size:10px}
+@media(max-width:560px){
+ .whatsapp-float{right:14px;bottom:15px;padding:11px 12px 11px 14px;font-size:12px}
+ .whatsapp-float .wa-hours{font-size:9px}
+}
