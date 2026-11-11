@@ -507,3 +507,74 @@ button{cursor:pointer}
 @media(prefers-reduced-motion:reduce){
   .hero-cinematic{background-attachment:scroll}
 }
+
+
+/* ===== Deliv'tout — finition responsive et effet cinématique ===== */
+:root{
+  --bg:#050806;--panel:#0b120d;--panel-2:#101a13;--line:#29382d;
+  --muted:#aab4aa;--white:#f7faf6;--lime:#78b947;--green:#5f9f35;
+}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{background:#050806;color:var(--white)}
+.site-header{height:82px}
+.main-nav>a:not(.nav-cta){height:82px}
+.hero-cinematic{
+  position:relative;isolation:isolate;
+  height:min(900px,calc(100svh - 82px));min-height:680px;
+  overflow:hidden;background:#07100a;
+  background-image:
+    linear-gradient(90deg,rgba(2,7,4,.78) 0%,rgba(2,7,4,.55) 36%,rgba(2,7,4,.12) 76%),
+    linear-gradient(0deg,rgba(2,7,4,.58),transparent 44%),
+    url("assets/delivtout-hero-fleet.webp");
+  background-size:cover;background-position:center 46%;
+  background-attachment:fixed;
+}
+.hero-background{display:none!important}
+.hero-shade{background:linear-gradient(90deg,rgba(2,7,4,.20),transparent 75%),linear-gradient(0deg,rgba(2,7,4,.30),transparent 40%)}
+.hero-content{padding-top:clamp(100px,15vh,175px);padding-bottom:100px}
+.hero-content h1{max-width:820px;font-size:clamp(48px,6.2vw,84px);line-height:.99}
+.hero-content>p{max-width:520px;font-size:clamp(15px,1.3vw,18px);line-height:1.7}
+.hero-chip{background:rgba(5,12,7,.74);backdrop-filter:blur(8px)}
+.partner-strip{margin-top:18px}
+.services-section{padding-top:105px;padding-bottom:110px}
+.services-section h2{max-width:800px;margin-inline:auto}
+.section-intro{max-width:650px;margin-inline:auto}
+.service-grid{gap:20px}
+.service-card{border:1px solid #2d3c30;border-radius:16px;background:#0b120d;overflow:hidden;box-shadow:0 12px 34px #0005}
+.service-image{height:250px;background-size:cover;background-position:center}
+.service-image:before{background:linear-gradient(180deg,rgba(2,7,4,.08),rgba(2,7,4,.72))}
+.service-info{padding:22px}
+.service-info p{line-height:1.7}
+.service-card:hover{transform:translateY(-5px);border-color:#78b947;box-shadow:0 18px 40px #0008,0 0 20px #78b94720}
+.fleet-section,.pro-band,.quote-section{position:relative}
+.whatsapp-float{z-index:115}
+@media(max-width:800px){
+  .site-header{height:72px}
+  .main-nav{top:71px}
+  .hero-cinematic{
+    height:auto;min-height:780px;max-height:none;
+    background-attachment:scroll;background-position:58% center;
+  }
+  .hero-content{padding-top:clamp(100px,14vh,145px)}
+  .hero-content h1{font-size:clamp(42px,8.4vw,62px)}
+  .services-section{padding-top:76px;padding-bottom:82px}
+  .service-image{height:230px}
+}
+@media(max-width:560px){
+  .hero-cinematic{min-height:760px;background-position:58% center}
+  .hero-content{width:calc(100% - 40px);padding-top:92px}
+  .hero-content h1{font-size:clamp(39px,10vw,52px);line-height:1.02}
+  .hero-content>p{font-size:13px;max-width:340px}
+  .hero-promises{display:flex;gap:10px;font-size:9px;flex-wrap:wrap}
+  .services-section{padding-top:64px}
+  .service-grid{grid-template-columns:1fr;gap:16px}
+  .service-card{display:block}
+  .service-image{height:220px;min-height:220px}
+  .service-info{padding:19px}
+  .service-info h3{font-size:16px}
+  .service-info p{font-size:11px;line-height:1.65}
+  .whatsapp-float{right:14px;bottom:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-cinematic{background-attachment:scroll}
+}
