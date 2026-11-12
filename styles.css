@@ -1195,3 +1195,53 @@ body{margin:0;background:var(--bg);color:var(--white);font-family:'DM Sans',sans
 @media(max-width:700px){
   .hero-background{width:100%!important;height:auto!important;aspect-ratio:2/1!important;object-fit:contain!important}
 }
+
+
+/* ===== Deliv'tout fixed fleet backdrop: stays behind the full page ===== */
+html{
+  background:#050806!important;
+}
+body{
+  position:relative!important;
+  isolation:isolate!important;
+  background:transparent!important;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(3,8,5,.76),rgba(3,8,5,.82)),
+    url("https://raw.githubusercontent.com/slphassani-crypt/delivtout-website/797dbcfbce8a63b6e014c4f5197c857ed21151bf/assets/delivtout-hero-fleet.webp");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
+  transform:translateZ(0);
+}
+.hero-cinematic{
+  background-color:transparent!important;
+}
+.fleet-section{
+  background:linear-gradient(110deg,rgba(11,18,13,.78),rgba(17,29,19,.72) 55%,rgba(7,11,8,.80))!important;
+}
+.pro-band{
+  background:radial-gradient(ellipse at 80% 20%,rgba(30,57,28,.78),rgba(11,21,13,.78) 54%,rgba(7,16,10,.82))!important;
+}
+.quote-section{
+  background:rgba(8,16,11,.82)!important;
+}
+.footer{
+  background:rgba(2,5,3,.88)!important;
+}
+@media(max-width:800px){
+  body::before{
+    background-position:56% center;
+    background-size:cover;
+    background-attachment:scroll;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{transform:none}
+}
