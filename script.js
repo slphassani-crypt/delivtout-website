@@ -50,7 +50,7 @@ if(form&&result){
     ];
     const message=lines.join('\n');
     const wa='https://wa.me/33681477291?text='+encodeURIComponent(message);
-    const mail='mailto:hl.delivtout@gmail.com?subject='+encodeURIComponent("Demande de contact Deliv'tout")+'&body='+encodeURIComponent(message);
+    const mail='mailto:contact@delivtout.fr?subject='+encodeURIComponent("Demande de contact Deliv'tout")+'&body='+encodeURIComponent(message);
     result.replaceChildren();
     const intro=document.createElement('p');
     intro.textContent='Votre demande est prête. Choisissez comment l’envoyer :';
