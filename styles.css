@@ -1325,3 +1325,85 @@ body::before{
   .partner-strip { width: calc(100% - 24px) !important; }
   .services-section { padding-top: 64px !important; }
 }
+
+
+/* ===== Correct mobile layout: image first, text below, with breathing room ===== */
+@media (max-width: 700px) {
+  .hero-cinematic {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    background: #050806 !important;
+  }
+  .hero-background {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 2 / 1 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+  .hero-content {
+    position: relative !important;
+    width: calc(100% - 40px) !important;
+    margin: 0 auto !important;
+    padding: 44px 0 52px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .hero-chip { margin: 0 auto 26px !important; }
+  .hero-content h1 {
+    margin: 0 auto 24px !important;
+    line-height: 1.2 !important;
+    max-width: 620px !important;
+  }
+  .hero-content > p {
+    margin: 0 auto 32px !important;
+    max-width: 560px !important;
+    line-height: 1.8 !important;
+  }
+  .hero-actions {
+    margin: 0 auto 34px !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .hero-promises {
+    margin: 0 auto !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    line-height: 1.7 !important;
+  }
+  .hero-scroll { display: none !important; }
+  .partner-strip {
+    position: relative !important;
+    width: calc(100% - 32px) !important;
+    height: auto !important;
+    min-height: 76px !important;
+    margin: 26px auto 0 !important;
+    padding: 12px 10px !important;
+  }
+  .services-section { padding-top: 76px !important; }
+}
+@media (max-width: 390px) {
+  .hero-content {
+    width: calc(100% - 32px) !important;
+    padding: 38px 0 46px !important;
+  }
+  .hero-chip { margin-bottom: 22px !important; }
+  .hero-content h1 { margin-bottom: 20px !important; }
+  .hero-content > p { margin-bottom: 28px !important; }
+  .hero-actions { margin-bottom: 28px !important; }
+  .partner-strip { width: calc(100% - 24px) !important; }
+  .services-section { padding-top: 68px !important; }
+}
