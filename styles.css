@@ -1942,3 +1942,21 @@ body::before{
   .hero-cinematic .hero-content h1 { font-size:34px !important; }
   .services-section { width:calc(100% - 32px) !important; }
 }
+
+
+/* Transport card: give the original 3:2 photo sprite its natural full height */
+@media screen and (max-width:800px) {
+  .service-card .service-image.service-transport {
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:3 / 2 !important;
+    flex:0 0 auto !important;
+    background-size:200% 100% !important;
+    background-position:left center !important;
+    background-repeat:no-repeat !important;
+    overflow:hidden !important;
+  }
+}
