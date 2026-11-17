@@ -1954,3 +1954,16 @@ body::before{
     background-position:center 42% !important;
   }
 }
+
+
+/* Restore the original Transport card photo appearance; do not alter other sections */
+@media screen and (max-width:700px) {
+  .service-card .service-image.service-transport {
+    height:230px !important;
+    min-height:230px !important;
+    flex:0 0 230px !important;
+    background-image:url("https://raw.githubusercontent.com/slphassani-crypt/delivtout-website/797dbcfbce8a63b6e014c4f5197c857ed21151bf/assets/delivtout-hero-fleet.webp") !important;
+    background-size:cover !important;
+    background-position:center 55% !important;
+  }
+}
